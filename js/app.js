@@ -4,8 +4,8 @@ limpar();//inicializando com o carrinho limpo
 
 function adicionar() {
 
-    let produto = document.getElementById('produto');//lista de produtos oferecidos
-    let valor = produto.options[produto.selectedIndex].value;//valor selecionado
+    let valor = document.getElementById('produto').value;//lista de produtos oferecidos
+    //let valor = produto.options[produto.selectedIndex].value;//valor selecionado
 
     let item = valor.split(' - ');//separando nome do valor
     let nome = item[0];
@@ -22,7 +22,7 @@ function adicionar() {
    
     //não precisa, neste caso, declarar a variável total fora da função, pois o código aqui, pega o valor total atual já escrito na tela
     let total = document.getElementById('valor-total').innerHTML.replace('R$','');//obtem o valor total
-    let valorTotal = parseFloat(total)+(parseFloat(preco.toFixed(2))*parseFloat(qtd));//montando valor total
+    let valorTotal = parseFloat(total)+(parseFloat(preco)*parseFloat(qtd));//montando valor total
 
     //inserindo novos itens no carrinho
     //observe a necessidade de concatenação de Sections para que o novo item não sobrescreva o antigo
